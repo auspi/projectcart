@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Builds new docker images
+docker build -t projectcart-latest .
+docker run -d --net="host" projectcart-latest

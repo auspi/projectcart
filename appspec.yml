@@ -102,11 +102,8 @@ hooks:
 # During the ApplicationInstall deployment lifecycle event, run the commands
 #   in the script specified in "location".
   ApplicationStart:
-    - location: docker build -t projectcart-latest .
+    - location: scripts/build_docker
       timeout: 900
-      runas: root
-    - location: docker run -d --net="host" projectcart-latest
-      timeout: 60
       runas: root
 # During the ValidateService deployment lifecycle event, run the commands
 #   in the script specified in "location".
