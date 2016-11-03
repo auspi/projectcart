@@ -84,10 +84,10 @@ hooks:
 # During the BeforeInstall deployment lifecycle event, run the commands
 #   in the script specified in "location".
   BeforeInstall:
-    - location: yum install -y docker
+    - location: scripts/install_dependencies
       timeout: 120
       runas: root
-    - location: service docker start
+    - location: scripts/start_services
       timeout: 30
       runas: root
 # During the AfterInstall deployment lifecycle event, run the commands
