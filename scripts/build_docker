@@ -2,4 +2,10 @@
 
 # Builds new docker images
 docker build -t projectcart-latest /tmp
+
+# Aliasing last running container so that it can be killed
+alias dl='docker ps -l -q'
+docker kill `dl`
+
+# Creating new container
 docker run -d --net="host" projectcart-latest
